@@ -58,6 +58,7 @@ cc_library(
     includes = ["generic-config", "src"],
     deps = [":trivialre", ":all_headers"],
     copts = CXXFLAGS,
+    linkopts = ['-lpthread'],
 )
 
 cc_binary(
@@ -213,7 +214,6 @@ cc_binary(
     copts = CXXFLAGS,
     srcs = ["benchmark/malloc_bench.cc"],
     deps = [":run_benchmark", ":tcmalloc_minimal"],
-    linkopts = ['-lpthread'],
 )
 
 cc_binary(
