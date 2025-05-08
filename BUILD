@@ -212,7 +212,9 @@ cc_binary(
     name = "tcmalloc_bench",
     copts = CXXFLAGS,
     srcs = ["benchmark/malloc_bench.cc"],
-    deps = [":run_benchmark", ":tcmalloc_minimal"])
+    deps = [":run_benchmark", ":tcmalloc_minimal"],
+    linkopts = ['-lpthread'],
+)
 
 cc_binary(
     name = "tcmalloc_debug_bench",
